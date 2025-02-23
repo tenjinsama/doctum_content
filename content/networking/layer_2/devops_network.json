@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Computer Networking Fundamentals For Developers, DevOps, and Platform Engineers",
+        "description": "learn networking concept for devops",
+        "estimated_duration": "60",
+        "difficulty": "medium",
+        "added_date": "2025-02-22",
+        "tags": [
+            "devops",
+            "network"
+        ],
+        "task_list": [
+            {
+                "id": 1,
+                "description": "read article https://labs.iximiuz.com/courses/computer-networking-fundamentals",
+                "duration": "60"
+            }
+        ],
+        "achieved": false
+    }
+]

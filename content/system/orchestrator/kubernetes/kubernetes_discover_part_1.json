@@ -1,0 +1,52 @@
+[
+    {
+        "name": "kubernetes discover part 1",
+        "description": "discovering kubernetes concept through official documentation",
+        "estimated_duration": "60",
+        "difficulty": "medium",
+        "added_date": "2025-02-23",
+        "tags": [
+            "kubernetes",
+            "devops",
+            "system"
+        ],
+        "task_list": [
+            {
+                "id": 1,
+                "description": "https://kubernetes.io/docs/concepts/overview/",
+                "duration": "5"
+            },
+            {
+                "id": 2,
+                "description": "https://kubernetes.io/docs/concepts/overview/kubernetes-api/",
+                "duration": "5"
+            },
+            {
+                "id": 3,
+                "description": "https://kubernetes.io/docs/reference/kubectl/",
+                "duration": "5"
+            },
+            {
+                "id": 4,
+                "description": "https://kubernetes.io/docs/concepts/architecture/#control-plane-components",
+                "duration": "5"
+            },
+            {
+                "id": 5,
+                "description": "https://kubernetes.io/docs/concepts/architecture/#node-components",
+                "duration": "5"
+            },
+            {
+                "id": 6,
+                "description": "https://kubernetes.io/docs/concepts/architecture/#architecture-variations",
+                "duration": "5"
+            },
+            {
+                "id": 7,
+                "description": "https://kubernetes.io/docs/concepts/architecture/nodes/",
+                "duration": "10"
+            }
+        ],
+        "achieved": true
+    }
+]

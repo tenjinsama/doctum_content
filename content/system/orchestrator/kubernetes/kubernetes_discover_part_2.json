@@ -1,0 +1,27 @@
+[
+    {
+        "name": "kubernetes discover part 2",
+        "description": "kubernetes discover through tutorial and blog article",
+        "estimated_duration": "30",
+        "difficulty": "medium",
+        "added_date": "2025-02-23",
+        "tags": [
+            "kubernetes",
+            "devops",
+            "system"
+        ],
+        "task_list": [
+            {
+                "id": 1,
+                "description": "https://cours.hadrienpelissier.fr/03-kubernetes/cours_1_presentation_k8s/",
+                "duration": "15"
+            },
+            {
+                "id": 2,
+                "description": "https://cours.hadrienpelissier.fr/03-kubernetes/cours_2_k8s_setup/",
+                "duration": "15"
+            }
+        ],
+        "achieved": true
+    }
+]
