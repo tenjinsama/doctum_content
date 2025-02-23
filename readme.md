@@ -2,10 +2,9 @@
 
 ## Description
 
-Lab list to train skills
-The result of my working session is here, report are also present.
+Git repository that contain courses description (content). <br>
+It can be updated through :
+- classic git usage
+- using [doctum_helper CLI application](https://github.com/tenjinsama/doctum_helper)
 
-## Usage
-
-This repository is automatically updated by my working session application "Doctum".
 
