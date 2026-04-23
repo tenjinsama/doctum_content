@@ -16,44 +16,31 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-add_gitkeep() {
-  for dir in "$1"/*; do
-    if [ -d "$dir" ]; then
-      ## Check if the directory is empty
-      if [ -z "$(ls -A "$dir")" ]; then
-        touch "$dir/.gitkeep"
-        echo "Added .gitkeep to empty directory: $dir"
-      else
-        ## Recursively call the function for non-empty directories
-        add_gitkeep "$dir"
-      fi
-    fi
-  done
-}
-
 manage_gitkeep() {
-###  add or remove .gitkeep in empty directories ###
-  for dir in "$1"/*; do
-    if [ -d "$dir" ]; then
-      ## Check if the directory is empty
-      if [ -z "$(ls -A "$dir")" ]; then
-        ## If empty, add .gitkeep
-        if [ ! -f "$dir/.gitkeep" ]; then
-          touch "$dir/.gitkeep"
-          echo "Added .gitkeep to empty directory: $dir"
+    ### add or remove .gitkeep in empty directories ###
+    for dir in "$1"/*; do
+        if [ -d "$dir" ]; then
+            ## Check if the directory is empty or contains only .gitkeep
+            non_gitkeep_files=$(find "$dir" -maxdepth 1 -mindepth 1 ! -name ".gitkeep")
+
+            if [ -z "$non_gitkeep_files" ]; then
+                ## If empty or only .gitkeep, ensure .gitkeep exists
+                if [ ! -f "$dir/.gitkeep" ]; then
+                    touch "$dir/.gitkeep"
+                    echo "Added .gitkeep to empty directory: $dir"
+                fi
+            else
+                ## If it contains other files, remove .gitkeep if it exists
+                if [ -f "$dir/.gitkeep" ]; then
+                    rm "$dir/.gitkeep"
+                    echo "Removed .gitkeep from non-empty directory: $dir"
+                fi
+                ## Recursively call the function for non-empty directories
+                manage_gitkeep "$dir"
+            fi
         fi
-      else
-        ## If not empty, remove .gitkeep if it exists
-        if [ -f "$dir/.gitkeep" ]; then
-          rm "$dir/.gitkeep"
-          echo "Removed .gitkeep from non-empty directory: $dir"
-        fi
-        ## Recursively call the function for non-empty directories
-        manage_gitkeep "$dir"
-      fi
-    fi
-  done
+    done
 }
 
-# Start the process
+## Start the process
 manage_gitkeep "$1"
